@@ -3,18 +3,70 @@ import 'package:flutter/material.dart';
 class HomeNav extends StatefulWidget {
   const HomeNav ({super.key});
 
+  @override
   State<HomeNav> createState() => _HomeNav();
 }
 
 class _HomeNav extends State<HomeNav> {
   int currentIndex = 0;
 
+  var products = <Map<String, String>>[
+    {
+      "name": "Shea & Moringa Butter",
+      "description":
+          "Shea&Moringa Butter is infused with moringa and other blends of herbs that softeness and nourishes hair and mositures your body",
+      "image": "assets/images/butter_outside.jpg",
+      "price": "15 000Rwf"
+    },
+    {
+      "name": "Gartha Deep Cleansing Shampoo",
+      "description":
+          "Our shampoo remove products residue and impurities from your scalp.",
+      "price": "13 000Rwf",
+      "image": "assets/images/shampoo.jpg"
+    },
+    {
+      "name": "Gartha Moisturizing Deep Conditioner",
+      "description":
+          "Our moisturizing deep conditioner adds moisture back to your hair,repair damage and leaves your hair sofy",
+      "price": "13 000Rwf",
+      "image": "assets/images/conditioner.jpg"
+    },
+  ];
+
+  List<Widget> gridItems() {
+    var cards = <Widget>[];
+
+    for (var product in products) {
+      cards.add(Card(
+        child: Column(
+          children: [
+            const Expanded(
+                child: Image(image: AssetImage('assets/background.png'))),
+            Text(product["name"]!),
+            Column(
+              children: [
+                Text(product["price"]!),
+                IconButton(
+                    onPressed: () => {}, icon: const Icon(Icons.shopping_cart))
+              ],
+            )
+          ],
+        ),
+      ));
+    }
+    return cards;
+  }
+
   static final home = Container(
     child: const Text("Home"),
   );
 
   static final shop = Container(
-    
+      child: GridView.count(
+    crossAxisCount: 2,
+    children: [],
+  )
   );
   
   static final gallery = Container(

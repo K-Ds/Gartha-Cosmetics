@@ -23,7 +23,7 @@ class _Product extends State<Product> {
           centerTitle: true,
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
           child: Column(children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(30),

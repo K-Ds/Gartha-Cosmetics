@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gartha/screens/cart.dart';
 import 'package:gartha/screens/products.dart';
 import 'package:gartha/widgets/product_grid.dart';
 
@@ -33,6 +34,27 @@ class _HomeNav extends State<HomeNav> {
     var widgets = <Widget>[Home(), Products(), Gallery()];
 
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 100,
+              child: DrawerHeader(
+                  child: Text(
+                'Gartha',
+                style: TextStyle(fontSize: 20),
+              )),
+            ),
+            ListTile(
+                title: Text("Cart"),
+                leading: Icon(Icons.shopping_basket),
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Cart()));
+                })
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onItemTap,
         currentIndex: currentIndex,
@@ -47,7 +69,7 @@ class _HomeNav extends State<HomeNav> {
       body: widgets[currentIndex],
       appBar: AppBar(
         actions: [IconButton(onPressed: () => {}, icon: Icon(Icons.person))],
-        leading: IconButton(onPressed: () => {}, icon: Icon(Icons.menu)),
+        // leading: IconButton(onPressed: () => {}, icon: Icon(Icons.menu)),
         title: const Text("GARTHA"),
         centerTitle: true,
       ),

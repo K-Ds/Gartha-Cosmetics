@@ -2,13 +2,16 @@ import "package:flutter/material.dart";
 import "package:gartha/widgets/product_grid.dart";
 
 class Products extends StatelessWidget {
+  Products({super.key});
+
   final products = <Map<String, String>>[
     {
       "name": "Shea & Moringa Butter",
       "description":
           "Shea&Moringa Butter is infused with moringa and other blends of herbs that softeness and nourishes hair and mositures your body",
       "image": "assets/images/butter_outside.jpg",
-      "price": "RWF 15000"
+      "price": "RWF 15000",
+
     },
     {
       "name": "Gartha Deep Cleansing Shampoo",
@@ -29,7 +32,7 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       child: ProductGrid(products: products),
     );
   }

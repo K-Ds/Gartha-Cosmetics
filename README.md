@@ -1,3 +1,6 @@
-# gartha
+# Gartha Cosmetics
 
-A new Flutter project.
+An E-Commerce app
+
+## Technologies
+- Flutter

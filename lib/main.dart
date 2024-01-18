@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gartha/pages/home.dart';
+import 'package:gartha/screens/home.dart';
 
 void main() {
   runApp(const MainApp());
